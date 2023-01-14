@@ -12,6 +12,7 @@ export interface Country {
     emoji?: string;
     languages: {
       name: string;
+      __typename?: string;
     }[];
   }
 export  interface LanguagesProps {
