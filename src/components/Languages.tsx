@@ -7,8 +7,12 @@ const Languages: React.FC<LanguagesProps> = ({
   countryCode,
 }: LanguagesProps) => {
   const [getLanguage, { loading, error, data }] = useLazyQuery(GET_LANGUAGE);
-  const country: Country = data?.country;
-  //fetches language for only one selected country inc default
+  const country: Country = {
+    emoji: data?.country.emoji,
+    languages: data?.country.languages
+  }
+
+  //fetches language for only one selected country incl default
   useEffect(() => {
     getLanguage({ variables: { code: countryCode } });
   }, [countryCode, getLanguage]);
@@ -19,11 +23,8 @@ const Languages: React.FC<LanguagesProps> = ({
 
   return (
     <div>
-      {data && (
-        <p>
-          {country.languages[0].name} {country.emoji}
-        </p>
-      )}
+      {data && <> {country.languages.map((language) => <p key={language.name}>{language.name}</p>)} </>}
+      {country.emoji}
     </div>
   );
 };
