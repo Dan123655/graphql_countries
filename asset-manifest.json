@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.css": "/graphql_countries/static/css/main.31d6cfe0.css",
+    "main.js": "/graphql_countries/static/js/main.36170dae.js",
+    "index.html": "/graphql_countries/index.html",
+    "main.36170dae.js.map": "/graphql_countries/static/js/main.36170dae.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.36170dae.js"
+  ]
+}
