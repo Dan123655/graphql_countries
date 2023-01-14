@@ -7,14 +7,15 @@ const Languages: React.FC<LanguagesProps> = ({
   countryCode,
 }: LanguagesProps) => {
   const [getLanguage, { loading, error, data }] = useLazyQuery(GET_LANGUAGE);
+  const country: Country = data?.country;
+  //fetches language for only one selected country inc default
   useEffect(() => {
     getLanguage({ variables: { code: countryCode } });
-  }, [countryCode]);
+  }, [countryCode, getLanguage]);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error</p>;
 
-  const country: Country = data?.country;
 
   return (
     <div>
