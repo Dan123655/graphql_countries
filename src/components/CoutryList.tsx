@@ -7,7 +7,7 @@ import { Countries } from "../types/types";
 const CountryList: React.FC<{}> = () => {
   const [countryCode, setCountryCode] = React.useState<string>("AF");
   const { loading, error, data } = useQuery(GET_COUNTRIES);
-  const countries: Countries = data?.countries;
+  const countries: Countries<string> = data?.countries;
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :</p>;
 

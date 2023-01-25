@@ -7,7 +7,7 @@ const Languages: React.FC<LanguagesProps> = ({
   countryCode,
 }: LanguagesProps) => {
   const [getLanguage, { loading, error, data }] = useLazyQuery(GET_LANGUAGE);
-  const country: Country = {
+  const country: Country<string> = {
     emoji: data?.country.emoji,
     languages: data?.country.languages
   }

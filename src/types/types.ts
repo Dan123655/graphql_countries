@@ -1,18 +1,18 @@
-export interface Countries {
+export interface Countries<T> {
     [x: string]: any;
     countries: [
       {
-        name: string;
-        code: string;
-        __typename?: string;
+        name: T;
+        code: T;
+        __typename?: T;
       }
     ]|[]
 };
-export interface Country {
-    emoji?: string;
+export interface Country<T> {
+    emoji?: T;
     languages: {
-      name: string;
-      __typename?: string;
+      name: T;
+      __typename?: T;
     }[];
   }
 export  interface LanguagesProps {
